@@ -15,10 +15,17 @@ Button btn_login,btn_register;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btn_login=findViewById(R.id.btn_login);
+        btn_register=findViewById(R.id.btn_register);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            }
+        });
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,RegistrationActivity.class));
             }
         });
     }
