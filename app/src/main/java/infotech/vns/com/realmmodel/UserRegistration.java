@@ -1,47 +1,43 @@
 package infotech.vns.com.realmmodel;
 
 import io.realm.RealmObject;
-import io.realm.annotations.Required;
+import io.realm.annotations.PrimaryKey;
 
-public class UserRegistration extends RealmObject {
-    @Required
-    private String fname;
-    @Required
-    private String lname;
-    @Required
-    private String mobile;
-    @Required
+public class UserRegistration extends RealmObject
+{
+
+    private String name;
     private String email;
+    private String address;
+    private int age;
 
-    public String getFname() {
-        return fname;
+
+    public UserRegistration() {
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
 
-    public String getLname() {
-        return lname;
+    public String getName() {
+        return name;
     }
-
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
     }
 }
