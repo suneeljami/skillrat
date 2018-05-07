@@ -1,5 +1,7 @@
 package infotech.vns.com.ui.activities;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import infotech.vns.com.ui.R;
+import infotech.vns.com.ui.fragments.UserProfile;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,6 +87,17 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            UserProfile userProfile = new UserProfile();
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.frameLayout, userProfile);
+//            MainActivity.fragmentStack.lastElement().onPause();
+//            fragmentTransaction.hide(HomeActivity.fragmentStack.lastElement());
+//            MainActivity.fragmentStack.clear();
+//            MainActivity.fragmentStack.push(fragmentHome);
+//            System.out.println("home stack size "+HomeActivity.fragmentStack.size());
+            fragmentTransaction.commit();
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
