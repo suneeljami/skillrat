@@ -26,7 +26,7 @@ public class PostingsFragment extends Fragment {
 
     // TODO: Customize parameters
     private int mColumnCount = 1;
-
+    RecyclerView recyclerViewPostings;
     private OnListFragmentInteractionListener mListener;
 
     /**
@@ -48,16 +48,16 @@ public class PostingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
+//        if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            recyclerViewPostings =  view.findViewById(R.id.recycler_view);
             if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                recyclerViewPostings.setLayoutManager(new LinearLayoutManager(context));
             } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                recyclerViewPostings.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
-        }
+            recyclerViewPostings.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+//        }
         return view;
     }
 

@@ -1,7 +1,4 @@
 package infotech.vns.com.ui.activities;
-
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -92,8 +89,10 @@ public class MainActivity extends AppCompatActivity
             UserProfile userProfile = new UserProfile();
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.frameLayout, userProfile);
+            fragmentTransaction.replace(R.id.frameLayout, userProfile);
             fragmentTransaction.addToBackStack(null);
+            fragmentManager.popBackStack();
+
 //            MainActivity.fragmentStack.lastElement().onPause();
 //            fragmentTransaction.hide(HomeActivity.fragmentStack.lastElement());
 //            MainActivity.fragmentStack.clear();
@@ -101,22 +100,15 @@ public class MainActivity extends AppCompatActivity
 //            System.out.println("home stack size "+HomeActivity.fragmentStack.size());
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_notifications) {
 
             PostingsFragment postingsFragment = new PostingsFragment();
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.frameLayout, postingsFragment);
+            fragmentTransaction.replace(R.id.frameLayout, postingsFragment);
             fragmentTransaction.addToBackStack(null);
+            fragmentManager.popBackStack();
             fragmentTransaction.commit();
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
@@ -129,4 +121,5 @@ public class MainActivity extends AppCompatActivity
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
     }
+
 }

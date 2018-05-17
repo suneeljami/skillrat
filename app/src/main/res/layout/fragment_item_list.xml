@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
     android:name="infotech.vns.com.ui.fragments.PostingsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    app:layoutManager="LinearLayoutManager"
+    android:background="@color/white"
     tools:context="infotech.vns.com.ui.fragments.PostingsFragment"
-    tools:listitem="@layout/fragment_item" />
+    tools:listitem="@layout/fragment_item">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_scrollFlags="scroll|enterAlways" />
+</LinearLayout>
