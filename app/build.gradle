@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "infotech.vns.com.myapplication"
+        applicationId "infotech.vns.com.SkillPayApp"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
@@ -36,7 +37,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.5'
     //implementation 'io.realm:realm-android:0.82.1'
-    //    debugImplementation 'com.amitshekhar.android:debug-db:1.0.1'
+//    debugImplementation 'com.amitshekhar.android:debug-db:1.0.1'
     implementation 'io.realm:android-adapters:2.0.0'
     implementation 'com.google.code.gson:gson:2.8.1'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'

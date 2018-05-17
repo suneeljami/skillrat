@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "135969797375",
+    "firebase_url": "https://skillrat-1201f.firebaseio.com",
+    "project_id": "skillrat-1201f",
+    "storage_bucket": "skillrat-1201f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135969797375:android:dfe3f6a5944032a0",
+        "android_client_info": {
+          "package_name": "infotech.vns.com.SkillPayApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135969797375-en54fo1fgtnd9ca6q8tnv29cgg5vl43o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEDxVz2yMAP3BeX_S_NDPeDwGDwbQtGO0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
