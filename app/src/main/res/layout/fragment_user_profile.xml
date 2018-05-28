@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,12 @@
     tools:context="infotech.vns.com.ui.fragments.UserProfile"
     android:background="@color/white"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="405dp">
@@ -15,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:orientation="vertical">
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_marginTop="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
@@ -176,6 +182,7 @@
         <LinearLayout
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -202,5 +209,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact Me"/>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

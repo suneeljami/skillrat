@@ -7,11 +7,11 @@
     android:background="@drawable/gradientbackground"
     android:orientation="vertical">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_splash_screen"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="@dimen/_150sdp"
         android:src="@drawable/skillratsplash">
 
-    </ImageView>
+    </de.hdodenhof.circleimageview.CircleImageView>
 </LinearLayout>
