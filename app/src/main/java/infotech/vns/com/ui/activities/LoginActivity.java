@@ -101,6 +101,7 @@ if (account!=null) {
     Intent loginIntent = new Intent(LoginActivity.this, MainActivity.class);
     loginIntent.putExtra("email", account.getEmail());
     loginIntent.putExtra("name", account.getDisplayName());
+    loginIntent.putExtra("imageurl",account.getPhotoUrl());
     startActivity(loginIntent);
 }
 else {

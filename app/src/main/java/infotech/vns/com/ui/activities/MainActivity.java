@@ -1,7 +1,10 @@
 package infotech.vns.com.ui.activities;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,7 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 import infotech.vns.com.ui.R;
 import infotech.vns.com.ui.fragments.PostingsFragment;
 import infotech.vns.com.ui.fragments.UserProfile;
@@ -19,14 +28,37 @@ import infotech.vns.com.ui.fragments.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,PostingsFragment.OnListFragmentInteractionListener {
-
+String profileName,eMailId,photoUrl;
+TextView tv_profilename,tv_email;
+    NavigationView navigationView;
+    CircleImageView profileImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle(getIntent().getStringExtra("name"));
+        initViews();
+        profileName=getIntent().getStringExtra("name");
+        eMailId=getIntent().getStringExtra("email");
+        photoUrl=getIntent().getStringExtra("imageurl");
+        URL url = null;
+        if (photoUrl!=null) {
+            try {
+                url = new URL(photoUrl);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            Bitmap bmp = null;
+            try {
+                bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            profileImage.setImageBitmap(bmp);
+        }
+        Log.d("photourl","==="+photoUrl);
+//        getSupportActionBar().setTitle();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +75,18 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
+        tv_profilename.setText(String.valueOf(profileName));
+        tv_email.setText(eMailId);
+    }
+
+    private void initViews() {
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View header=navigationView.getHeaderView(0);
+        tv_email=header.findViewById(R.id.tv_email);
+        tv_profilename=header.findViewById(R.id.tv_profilename);
+        profileImage=header.findViewById(R.id.iv_profile);
     }
 
     @Override
