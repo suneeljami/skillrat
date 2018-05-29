@@ -15,13 +15,25 @@
       },
       "oauth_client": [
         {
+          "client_id": "135969797375-1k7a82aj3n6hqqolg18ltdj7gvo63khu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "infotech.vns.com.SkillPayApp",
+            "certificate_hash": "20212513383e034f2ab49a8da52487de73cf1948"
+          }
+        },
+        {
+          "client_id": "135969797375-en54fo1fgtnd9ca6q8tnv29cgg5vl43o.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "135969797375-en54fo1fgtnd9ca6q8tnv29cgg5vl43o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBEDxVz2yMAP3BeX_S_NDPeDwGDwbQtGO0"
+          "current_key": "AIzaSyAt1U_rGD9rDHF_cx0TxRd4ooCFwCmimqQ"
         }
       ],
       "services": {
@@ -29,8 +41,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135969797375-en54fo1fgtnd9ca6q8tnv29cgg5vl43o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
