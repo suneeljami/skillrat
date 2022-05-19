@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         //suneel jami changes
+        //sai taks created
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         btn_login=findViewById(R.id.btn_login);
